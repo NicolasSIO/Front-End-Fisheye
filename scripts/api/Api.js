@@ -3,11 +3,22 @@ export default class Api {
     this._url = url;
   }
 
-  async get() {
+  async getPhotographers() {
     try {
       let res = await fetch(this._url);
       let data = await res.json();
       return data.photographers;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  async getMedia(id) {
+    try {
+      let res = await fetch(this._url);
+      let data = await res.json();
+      const media = data.media.filter((media) => media.photographerId === id);
+      return media;
     } catch (e) {
       console.log(e);
     }

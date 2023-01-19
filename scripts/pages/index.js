@@ -12,7 +12,7 @@ class Index {
   }
 
   async main() {
-    const photographerData = await this.photographerApi.get();
+    const photographerData = await this.photographerApi.getPhotographers();
 
     const Photographers = photographerData.map(
       (photographer) => new PhotographerFactory(photographer)
