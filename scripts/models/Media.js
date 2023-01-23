@@ -7,6 +7,7 @@ export default class Media {
     this._date = data.date;
     this._price = data.price;
 
+    // Permet de dire si le média est une photo ou une vidéo
     if (data.hasOwnProperty("image")) {
       this._type = "image";
       this._media = data.image;

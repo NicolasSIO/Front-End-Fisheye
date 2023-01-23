@@ -12,12 +12,14 @@ class Index {
   }
 
   async main() {
+    // On récupere les photographes
     const photographerData = await this.photographerApi.getPhotographers();
 
     const Photographers = photographerData.map(
       (photographer) => new PhotographerFactory(photographer)
     );
 
+    // Permet de créer les cartes pour chaque photographes
     Photographers.forEach((photographer) => {
       const Template = new PhotographerCard(photographer);
       this.$photographersSection.appendChild(

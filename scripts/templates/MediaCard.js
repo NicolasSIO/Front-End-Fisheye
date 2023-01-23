@@ -3,6 +3,7 @@ export default class MediaCard {
     this._media = media;
   }
 
+  // Permet de changer l'affichage selon le type de média
   createMediaCardDOM() {
     if (this._media.type === "image") {
       return this.createMediaCardImage();

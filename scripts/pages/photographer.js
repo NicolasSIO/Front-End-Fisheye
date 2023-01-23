@@ -12,10 +12,12 @@ class Photographer {
   }
 
   async main() {
-    //let id = 243;
+    // On récupere l'id du photographe dans l'URL
     let params = new URLSearchParams(document.location.search);
     console.log(document.location.search);
     let id = parseInt(params.get("id"));
+
+    // On récupere les infos du photographe grâce à son id
     const photographerData = await this.photographerApi.getId(id);
 
     const PhotographerProfile = new PhotographerCard(photographerData);
@@ -23,12 +25,14 @@ class Photographer {
       PhotographerProfile.createPhotographerProfileDOM()
     );
 
+    // On récupere les médias du photographe
     const mediaData = await this.photographerApi.getMedia(id);
 
     const Medias = mediaData.map((media) => new MediaFactory(media));
 
     let likes = 0;
 
+    // On créer les cartes pour les médias et on récupere les likes
     Medias.forEach((media) => {
       const Template = new MediaCard(media);
       this.$mediasSection.appendChild(Template.createMediaCardDOM());

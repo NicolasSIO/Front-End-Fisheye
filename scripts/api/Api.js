@@ -3,6 +3,7 @@ export default class Api {
     this._url = url;
   }
 
+  // Récupération de tous les photographes
   async getPhotographers() {
     try {
       let res = await fetch(this._url);
@@ -13,6 +14,7 @@ export default class Api {
     }
   }
 
+  // Récupérer des photos selon l'ID du photographe
   async getMedia(id) {
     try {
       let res = await fetch(this._url);
@@ -24,6 +26,7 @@ export default class Api {
     }
   }
 
+  // Récupération d'un photographe selon son ID
   async getId(id) {
     try {
       let res = await fetch(this._url);
