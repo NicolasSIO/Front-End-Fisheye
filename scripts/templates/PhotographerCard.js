@@ -30,10 +30,10 @@ export default class PhotographerCard {
     const $section = document.createElement("article");
 
     const photographerProfile = `
-        <div>
-          <h1>${this._photographer.name}</h1>
-          <p>${this._photographer.city}, ${this._photographer.country}</p>
-          <p>${this._photographer.tagline}</p>
+        <div class="grid-3">
+          <h1 class="photograph-name">${this._photographer.name}</h1>
+          <p class="photograph-location">${this._photographer.city}, ${this._photographer.country}</p>
+          <p class="photograp-tagline">${this._photographer.tagline}</p>
         </div>
         <button class="contact_button" onclick="displayModal()">
           Contactez-moi

@@ -19,9 +19,8 @@ export default class MediaCard {
       <img
         alt="${this._media.title}"
         src="${this._media.media}"
-        class="media-img"
       />
-      <footer>
+      <footer class="footer-figure">
         <p>${this._media.title}</p>
         <p>${this._media.likes} <i class="fa-solid fa-heart"></i></p>
       </footer>
