@@ -34,11 +34,11 @@ export default class MediaCard {
     const $section = document.createElement("figure");
 
     const mediaCard = `
-      <video title="${this._media.title}">
+      <video controls width="350" height="300" title="${this._media.title}">
         <source src="${this._media.media}" type="video/mp4">
         Votre navigateur ne prend pas en charge la vidéo.
       </video>
-      <footer>
+      <footer class="footer-figure">
         <p>${this._media.title}</p>
         <p>${this._media.likes} <i class="fa-solid fa-heart"></i></p>
       </footer>

@@ -37,10 +37,14 @@ class Photographer {
       const Template = new MediaCard(media);
       this.$mediasSection.appendChild(Template.createMediaCardDOM());
       likes += media.likes;
-      console.log(likes);
     });
 
-    console.log(Medias);
+    document.querySelector(
+      ".likes"
+    ).innerHTML = `${likes} <i class="fa-solid fa-heart"></i>`;
+    document.querySelector(
+      ".price"
+    ).innerHTML = `${PhotographerProfile._photographer.price}€ / jour`;
   }
 }
 

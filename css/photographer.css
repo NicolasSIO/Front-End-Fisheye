@@ -2,6 +2,10 @@
   display: none;
 }
 
+.relative {
+  position: relative;
+}
+
 .photograph-header {
   background-color: #fafafa;
   height: 300px;
@@ -60,27 +64,44 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
-  margin: 0 7%;
 }
 
 figure {
   width: 350px;
   height: 350px;
   gap: 70px;
+  margin-bottom: 30px;
 }
 
 .footer-figure {
   display: flex;
   justify-content: space-between;
-  padding: 0 10px;
   color: #911c1c;
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 img {
   width: 350px;
   height: 300px;
   object-fit: cover;
+  border-radius: 5px;
+}
+
+.cadre {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+  width: 376px;
+  height: 66px;
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 5px;
+  bottom: 0;
+  right: 36px;
+  background-color: #db8876;
 }
 
 .contact_button {
