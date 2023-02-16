@@ -5,10 +5,15 @@ function startLightbox() {
   let lightboxPrev = document.querySelector(".lightbox-prev");
   let lightboxMedia = document.querySelector(".lightbox-media-container");
 
-  const figures = document.querySelectorAll("figure");
+  const figures = document.querySelectorAll(".media-container");
+
+  let index = 0;
 
   figures.forEach((figure) => {
     figure.addEventListener("click", (e) => {
+      // retourne l'index du media cliqué
+      // retourne la variable figures sous forme de tableau
+      index = [...figures].indexOf(e.target.parentNode);
       // On test le type de l'élément ciblé
       if (e.target.parentNode.parentNode.getAttribute("type") === "image") {
         lightbox.style.display = "block";
@@ -20,11 +25,6 @@ function startLightbox() {
         // Permet d'ajouter le contrôle de la vidéo
         lightboxMedia.childNodes[0].setAttribute("controls", true);
       }
-      // div.innerHTML = e.target.outerHTML;
-      // div.childNodes[0].setAttribute("controls", true);
-      // console.log(div.childNodes);
-      // console.log(e.target.parentNode.parentNode.getAttribute("type"));
-      // console.log(e.target.outerHTML);
     });
   });
 
@@ -32,27 +32,25 @@ function startLightbox() {
     lightbox.style.display = "none";
   });
 
-  let test = document.getElementsByTagName("figure");
-  console.log(test);
-
-  let index = 0;
-
   lightboxNext.addEventListener("click", () => {
     index++;
-    if (index === test.length) {
+    if (index === figures.length) {
       index = 0;
     }
-    lightboxMedia.innerHTML = test[index].childNodes[1].childNodes[1].outerHTML;
+    if ([...figures][index].getAttribute("type") === "video") {
+      [...figures][index].childNodes[1].setAttribute("controls", true);
+    }
+    lightboxMedia.innerHTML = [...figures][index].childNodes[1].outerHTML;
   });
 
   lightboxPrev.addEventListener("click", () => {
     index--;
     if (index < 0) {
-      index = test.length - 1;
+      index = figures.length - 1;
     }
-    if (test[index].getAttribute("type") === "video") {
-      test[index].childNodes[1].childNodes[1].setAttribute("controls", true);
+    if ([...figures][index].getAttribute("type") === "video") {
+      [...figures][index].childNodes[1].setAttribute("controls", true);
     }
-    lightboxMedia.innerHTML = test[index].childNodes[1].childNodes[1].outerHTML;
+    lightboxMedia.innerHTML = [...figures][index].childNodes[1].outerHTML;
   });
 }
