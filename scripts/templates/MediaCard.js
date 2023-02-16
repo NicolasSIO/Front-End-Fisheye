@@ -14,12 +14,15 @@ export default class MediaCard {
 
   createMediaCardImage() {
     const $section = document.createElement("figure");
+    $section.setAttribute("type", "image");
 
     const mediaCard = `
-      <img
-        alt="${this._media.title}"
-        src="${this._media.media}"
-      />
+      <div class="media-container">
+        <img
+          alt="${this._media.title}"
+          src="${this._media.media}"
+        />
+      </div>
       <footer class="footer-figure">
         <p>${this._media.title}</p>
         <p>${this._media.likes} <i class="fa-solid fa-heart"></i></p>
@@ -32,12 +35,15 @@ export default class MediaCard {
 
   createMediaCardVideo() {
     const $section = document.createElement("figure");
+    $section.setAttribute("type", "video");
 
     const mediaCard = `
-      <video controls width="350" height="300" title="${this._media.title}">
-        <source src="${this._media.media}" type="video/mp4">
-        Votre navigateur ne prend pas en charge la vidéo.
-      </video>
+      <div class="media-container">
+        <video title="${this._media.title}">
+          <source src="${this._media.media}" type="video/mp4">
+          Votre navigateur ne prend pas en charge la vidéo.
+        </video>
+      </div>
       <footer class="footer-figure">
         <p>${this._media.title}</p>
         <p>${this._media.likes} <i class="fa-solid fa-heart"></i></p>

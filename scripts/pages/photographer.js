@@ -45,6 +45,8 @@ class Photographer {
     document.querySelector(
       ".price"
     ).innerHTML = `${PhotographerProfile._photographer.price}€ / jour`;
+
+    startLightbox();
   }
 }
 
