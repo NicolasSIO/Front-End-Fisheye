@@ -57,12 +57,34 @@
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-        <form>
-          <div>
+        <form name="contact" method="get" action="photographer.html">
+          <div class="formData">
             <label>Prénom</label>
-            <input />
+            <input class="text-control" type="text" id="first" name="first" />
           </div>
-          <button class="contact_button">Envoyer</button>
+          <div class="formData">
+            <label>Nom</label>
+            <input class="text-control" type="text" id="last" name="last" />
+          </div>
+          <div class="formData">
+            <label>E-mail</label>
+            <input class="text-control" type="email" id="email" name="email" />
+          </div>
+          <div class="formData">
+            <label>Votre message</label>
+            <input
+              class="text-control input-message"
+              type="textarea"
+              id="message"
+              name="message"
+            />
+          </div>
+          <input
+            class="contact_button btn-submit"
+            type="submit"
+          >
+            Envoyer
+          </input>
         </form>
       </div>
     </div>

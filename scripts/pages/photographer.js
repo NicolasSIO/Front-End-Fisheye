@@ -14,7 +14,6 @@ class Photographer {
   async main() {
     // On récupere l'id du photographe dans l'URL
     let params = new URLSearchParams(document.location.search);
-    console.log(document.location.search);
     let id = parseInt(params.get("id"));
 
     // On récupere les infos du photographe grâce à son id
@@ -47,7 +46,19 @@ class Photographer {
     ).innerHTML = `${PhotographerProfile._photographer.price}€ / jour`;
 
     startLightbox();
+    submit();
+
+    // this.sort();
   }
+
+  // sort() {
+  //   let figures = document.getElementsByTagName("figure");
+  //   console.log(figures);
+  //   let tri = document.querySelector("select");
+  //   if (tri.value === "popularite") {
+  //     figures.find(".media-container");
+  //   }
+  // }
 }
 
 const photographer = new Photographer();

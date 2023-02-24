@@ -115,6 +115,8 @@ video {
   background-color: #db8876;
 }
 
+/* Contact form */
+
 .contact_button {
   font-size: 20px;
   font-weight: bold;
@@ -128,16 +130,26 @@ video {
   cursor: pointer;
 }
 
+#contact_modal {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: white;
+}
+
 .modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 5px;
   background-color: #db8876;
   width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   padding: 35px;
-  margin: auto;
 }
 
 .modal header {
@@ -147,6 +159,8 @@ video {
 
 .modal header img {
   cursor: pointer;
+  width: 42px;
+  height: 42px;
 }
 
 .modal header h2 {
@@ -155,12 +169,12 @@ video {
   text-align: center;
 }
 
-form {
+/* form {
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
-}
+} */
 
 form label {
   color: #312e2e;
@@ -172,7 +186,6 @@ form div {
   flex-direction: column;
   width: 100%;
   align-items: self-start;
-  margin-bottom: 26px;
 }
 
 form input {
@@ -180,7 +193,20 @@ form input {
   height: 68px;
   border: none;
   border-radius: 5px;
+  font-size: 36px;
 }
+
+.input-message {
+  height: 170px;
+}
+
+.btn-submit {
+  margin-top: 26px;
+}
+
+/* ------------------ */
+
+/* Lightbox */
 
 .lightbox {
   position: fixed;
@@ -240,3 +266,5 @@ form input {
   max-width: 1050px;
   height: 900px;
 }
+
+/* ----------------- */
