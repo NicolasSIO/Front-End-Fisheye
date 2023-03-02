@@ -175,6 +175,7 @@ video {
 .contact_name {
   font-size: 64px;
   font-weight: normal;
+  margin-bottom: 10px;
 }
 
 /* form {

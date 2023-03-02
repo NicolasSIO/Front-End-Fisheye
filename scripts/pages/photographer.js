@@ -53,18 +53,39 @@ class Photographer {
 
   sort() {
     let figures = document.getElementsByTagName("figure");
-    console.log(figures);
     let tri = document.querySelector("select");
+    let indexesArray = Array.from(figures);
     tri.addEventListener("change", () => {
+      // tri selon les likes
       if (tri.value === "popularite") {
-        let indexesArray = Array.from(figures);
         let sorted = indexesArray.sort((a, b) => {
           a = a.childNodes[1].getAttribute("data-like");
           b = b.childNodes[1].getAttribute("data-like");
+          return a - b;
+        });
+        document.querySelector(".media_article").innerHTML = "";
+        sorted.forEach((e) =>
+          document.querySelector(".media_article").appendChild(e)
+        );
+      // tri selon la date 
+      } else if (tri.value === "date") {
+        let sorted = indexesArray.sort((a, b) => {
+          a = new Date(a.childNodes[1].getAttribute("data-date")).getTime();
+          b = new Date(b.childNodes[1].getAttribute("data-date")).getTime();
+          return a > b ? 1 : -1;
+        });
+        document.querySelector(".media_article").innerHTML = "";
+        sorted.forEach((e) => {
+          document.querySelector(".media_article").appendChild(e);
+        });
+      // tri selon le titre
+      } else {
+        let sorted = indexesArray.sort((a, b) => {
+          a = a.childNodes[1].getAttribute("data-title");
+          b = b.childNodes[1].getAttribute("data-title");
           return a.localeCompare(b);
         });
         document.querySelector(".media_article").innerHTML = "";
-        console.log(sorted);
         sorted.forEach((e) =>
           document.querySelector(".media_article").appendChild(e)
         );
