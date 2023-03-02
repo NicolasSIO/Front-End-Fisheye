@@ -26,4 +26,7 @@ function submit() {
 
     modal.style.display = "none";
   });
+
+  document.querySelector(".contact_name").innerHTML =
+    document.querySelector(".photograph-name").innerHTML;
 }

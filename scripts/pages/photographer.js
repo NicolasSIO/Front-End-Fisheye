@@ -48,17 +48,29 @@ class Photographer {
     startLightbox();
     submit();
 
-    // this.sort();
+    this.sort();
   }
 
-  // sort() {
-  //   let figures = document.getElementsByTagName("figure");
-  //   console.log(figures);
-  //   let tri = document.querySelector("select");
-  //   if (tri.value === "popularite") {
-  //     figures.find(".media-container");
-  //   }
-  // }
+  sort() {
+    let figures = document.getElementsByTagName("figure");
+    console.log(figures);
+    let tri = document.querySelector("select");
+    tri.addEventListener("change", () => {
+      if (tri.value === "popularite") {
+        let indexesArray = Array.from(figures);
+        let sorted = indexesArray.sort((a, b) => {
+          a = a.childNodes[1].getAttribute("data-like");
+          b = b.childNodes[1].getAttribute("data-like");
+          return a.localeCompare(b);
+        });
+        document.querySelector(".media_article").innerHTML = "";
+        console.log(sorted);
+        sorted.forEach((e) =>
+          document.querySelector(".media_article").appendChild(e)
+        );
+      }
+    });
+  }
 }
 
 const photographer = new Photographer();

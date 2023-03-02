@@ -163,10 +163,18 @@ video {
   height: 42px;
 }
 
+.modal header div {
+  display: block;
+}
+
 .modal header h2 {
   font-size: 64px;
   font-weight: normal;
-  text-align: center;
+}
+
+.contact_name {
+  font-size: 64px;
+  font-weight: normal;
 }
 
 /* form {
