@@ -33,36 +33,33 @@ function startLightbox() {
     lightbox.style.display = "none";
   });
 
-  //e.keyCode === 27 (echap)
   //e.keyCode === 13 (entrer)
-  //e.keyCode === 37 (arrowLeft)
-  //e.keyCode === 39 (arrowRight)
 
   // Navigation clavier
   body.addEventListener("keyup", (e) => {
-    console.log("e : ", e.keyCode);
     switch (e.keyCode) {
+      // e.keyCode === 27 (echap)
       case 27:
         lightbox.style.display = "none";
         break;
+      //e.keyCode === 37 (arrowLeft)
       case 37:
         index--;
-        console.log(index);
         if (index < 0) {
           index = figures.length - 1;
         }
-        if ([...figures][index].getAttribute("type") === "video") {
+        if ([...figures][index].parentNode.getAttribute("type") === "video") {
           [...figures][index].childNodes[1].setAttribute("controls", true);
         }
         lightboxMedia.innerHTML = [...figures][index].childNodes[1].outerHTML;
         break;
+      //e.keyCode === 39 (arrowRight)
       case 39:
         index++;
-        console.log(index);
         if (index === figures.length) {
           index = 0;
         }
-        if ([...figures][index].getAttribute("type") === "video") {
+        if ([...figures][index].parentNode.getAttribute("type") === "video") {
           [...figures][index].childNodes[1].setAttribute("controls", true);
         }
         lightboxMedia.innerHTML = [...figures][index].childNodes[1].outerHTML;
