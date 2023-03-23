@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
@@ -11,14 +11,17 @@
     <title>Fisheye</title>
   </head>
   <body>
-    <header>
+    <header role="banner">
       <a href="/index.html">
         <img src="assets/images/logo.png" class="logo" alt="logo" />
       </a>
       <h1>Nos photographes</h1>
     </header>
     <main id="main">
-      <div class="photographer_section"></div>
+      <div
+        class="photographer_section"
+        aria-label="Affiche les photographes"
+      ></div>
     </main>
     <script type="module" src="scripts/pages/Index.js"></script>
   </body>

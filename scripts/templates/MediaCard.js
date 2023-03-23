@@ -17,7 +17,7 @@ export default class MediaCard {
     $section.setAttribute("type", "image");
 
     const mediaCard = `
-      <div class="media-container" data-like="${this._media.likes}" data-title="${this._media.title}" data-date="${this._media.date}">
+      <div class="media-container" data-like="${this._media.likes}" data-title="${this._media.title}" data-date="${this._media.date}" aria-label="${this._media.title}" aria-controls="modal">
         <img
           alt="${this._media.title}"
           src="${this._media.media}"
@@ -38,7 +38,7 @@ export default class MediaCard {
     $section.setAttribute("type", "video");
 
     const mediaCard = `
-      <div class="media-container" data-like="${this._media.likes}" data-title="${this._media.title}" data-date="${this._media.date}">
+      <div class="media-container" data-like="${this._media.likes}" data-title="${this._media.title}" data-date="${this._media.date}" aria-label="${this._media.title}" aria-controls="modal">
         <video title="${this._media.title}">
           <source src="${this._media.media}" type="video/mp4">
           Votre navigateur ne prend pas en charge la vidéo.

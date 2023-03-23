@@ -67,8 +67,8 @@ class Photographer {
         sorted.forEach((e) =>
           document.querySelector(".media_article").appendChild(e)
         );
-      // tri selon la date 
-      } else if (tri.value === "date") {
+      } // tri selon la date
+      else if (tri.value === "date") {
         let sorted = indexesArray.sort((a, b) => {
           a = new Date(a.childNodes[1].getAttribute("data-date")).getTime();
           b = new Date(b.childNodes[1].getAttribute("data-date")).getTime();
@@ -78,8 +78,8 @@ class Photographer {
         sorted.forEach((e) => {
           document.querySelector(".media_article").appendChild(e);
         });
-      // tri selon le titre
-      } else {
+      } // tri selon le titre
+      else {
         let sorted = indexesArray.sort((a, b) => {
           a = a.childNodes[1].getAttribute("data-title");
           b = b.childNodes[1].getAttribute("data-title");

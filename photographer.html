@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
@@ -16,7 +16,7 @@
     <title>Fisheye - photographe</title>
   </head>
   <body>
-    <header>
+    <header role="banner">
       <a href="/index.html">
         <img src="assets/images/logo.png" class="logo" alt="logo" />
       </a>
@@ -25,18 +25,23 @@
       <div class="photograph-header"></div>
       <div class="tri-div">
         <p class="tri-p">Trier par</p>
-        <select name="tri" id="tri" class="tri-select">
+        <select
+          name="tri"
+          id="tri"
+          class="tri-select"
+          aria-label="Tri les médias"
+        >
           <option value="popularite" class="tri-option">Popularité</option>
           <option value="date" class="tri-option">Date</option>
           <option value="titre" class="tri-option">Titre</option>
         </select>
       </div>
-      <article class="media_article"></article>
+      <article class="media_article" aria-label="Afffiche les médias"></article>
       <div class="cadre">
         <p class="likes"></p>
         <p class="price"></p>
       </div>
-      <div class="lightbox">
+      <div class="lightbox" aria-label="Lightbox du média">
         <button class="lightbox-close">
           <i class="fa-solid fa-xmark"></i>
         </button>
@@ -82,11 +87,7 @@
               name="message"
             />
           </div>
-          <input
-            class="contact_button btn-submit"
-            type="submit"
-          >
-          </input>
+          <input class="contact_button btn-submit" type="submit" />
         </form>
       </div>
     </div>
