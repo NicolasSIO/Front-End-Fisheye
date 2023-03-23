@@ -1,7 +1,7 @@
-import Api from "../api/api.js";
-import PhotographerCard from "../templates/photographerCard.js";
-import MediaFactory from "../factories/mediaFactory.js";
-import MediaCard from "../templates/mediaCard.js";
+import Api from "../api/Api.js";
+import PhotographerCard from "../templates/PhotographerCard.js";
+import MediaFactory from "../factories/MediaFactory.js";
+import MediaCard from "../templates/MediaCard.js";
 
 class Photographer {
   constructor() {

@@ -1,6 +1,6 @@
-import Api from "../api/api.js";
-import PhotographerFactory from "../factories/photographerFactory.js";
-import PhotographerCard from "../templates/photographerCard.js";
+import Api from "../api/Api.js";
+import PhotographerFactory from "../factories/PhotographerFactory.js";
+import PhotographerCard from "../templates/PhotographerCard.js";
 
 class Index {
   constructor() {

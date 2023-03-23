@@ -1,4 +1,4 @@
-import Media from "../models/media.js";
+import Media from "../models/Media.js";
 
 export default class MediaFactory {
   constructor(media) {

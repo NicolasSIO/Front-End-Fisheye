@@ -1,4 +1,4 @@
-import Photographer from "../models/photographer.js";
+import Photographer from "../models/Photographer.js";
 
 export default class PhotographerFactory {
   constructor(photographer) {
