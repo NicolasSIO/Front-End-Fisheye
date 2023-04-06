@@ -44,16 +44,16 @@ class Photographer {
       coeur.addEventListener("click", () => {
         let likeMedia = parseInt(coeur.childNodes[0].nodeValue) + 1;
         likes++;
-        coeur.innerHTML = `${likeMedia} <img src="assets/icons/heart.svg" alt="Coeur" class="coeur"/>`;
+        coeur.innerHTML = `${likeMedia} <img src="assets/icons/heartRed.svg" alt="Coeur" class="coeur"/>`;
         document.querySelector(
           ".likes"
-        ).innerHTML = `${likes} <img src="assets/icons/heart.svg" alt="Coeur" class="coeur"/>`;
+        ).innerHTML = `${likes} <img src="assets/icons/heartBlack.svg" alt="Coeur" class="coeur"/>`;
       });
     });
 
     document.querySelector(
       ".likes"
-    ).innerHTML = `${likes} <img src="assets/icons/heart.svg" alt="Coeur" class="coeur"/>`;
+    ).innerHTML = `${likes} <img src="assets/icons/heartBlack.svg" alt="Coeur" class="coeur"/>`;
     document.querySelector(
       ".price"
     ).innerHTML = `${PhotographerProfile._photographer.price}€ / jour`;
