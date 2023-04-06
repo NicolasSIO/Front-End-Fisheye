@@ -3,6 +3,7 @@ const form = document.forms["contact"];
 
 function displayModal() {
   modal.style.display = "block";
+  modal.classList.add("open");
 }
 
 function closeModal() {
@@ -10,7 +11,7 @@ function closeModal() {
 }
 
 function submit() {
-  const submit = form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     console.log(
@@ -23,6 +24,8 @@ function submit() {
       ", Message :",
       form.elements["message"].value.trim()
     );
+
+    form.reset();
 
     modal.style.display = "none";
   });

@@ -81,6 +81,11 @@ figure {
   font-weight: 400;
 }
 
+.coeur {
+  height: 18px;
+  width: 18px;
+}
+
 .media-container {
   width: 350px;
   height: 300px;
@@ -231,10 +236,9 @@ form input {
 
 .lightbox-next,
 .lightbox-prev {
-  color: #901c1c;
-  font-size: 48px;
+  width: 26px;
+  height: 28px;
   border: none;
-  background-color: rgba(100%, 100%, 100%, 0);
   top: 50%;
   z-index: 11;
   cursor: pointer;
@@ -253,11 +257,7 @@ form input {
 }
 
 .lightbox-close {
-  color: #901c1c;
-  font-size: 48px;
   border: none;
-  background-color: rgba(100%, 100%, 100%, 0);
-  top: 50%;
   z-index: 11;
   cursor: pointer;
   position: absolute;

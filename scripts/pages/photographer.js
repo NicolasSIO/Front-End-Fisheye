@@ -38,12 +38,42 @@ class Photographer {
       likes += media.likes;
     });
 
+    // On ajoute incrémente les likes quand on clique sur le coeur
+    let coeurs = document.querySelectorAll(".like");
+    coeurs.forEach((coeur) => {
+      coeur.addEventListener("click", () => {
+        let likeMedia = parseInt(coeur.childNodes[0].nodeValue) + 1;
+        likes++;
+        coeur.innerHTML = `${likeMedia} <img src="assets/icons/heart.svg" alt="Coeur" class="coeur"/>`;
+        document.querySelector(
+          ".likes"
+        ).innerHTML = `${likes} <img src="assets/icons/heart.svg" alt="Coeur" class="coeur"/>`;
+      });
+    });
+
     document.querySelector(
       ".likes"
-    ).innerHTML = `${likes} <i class="fa-solid fa-heart"></i>`;
+    ).innerHTML = `${likes} <img src="assets/icons/heart.svg" alt="Coeur" class="coeur"/>`;
     document.querySelector(
       ".price"
     ).innerHTML = `${PhotographerProfile._photographer.price}€ / jour`;
+
+    const body = document.querySelector("body");
+    body.addEventListener("keyup", (e) => {
+      // e.keyCode === 27 (echap)
+      if (e.keyCode === 27) {
+        if (
+          document.getElementById("contact_modal").classList.contains("open")
+        ) {
+          document.getElementById("contact_modal").classList.remove("open");
+          document.getElementById("contact_modal").style.display = "none";
+        }
+        if (document.querySelector(".lightbox").classList.contains("open")) {
+          document.querySelector(".lightbox").classList.remove("open");
+          document.querySelector(".lightbox").style.display = "none";
+        }
+      }
+    });
 
     startLightbox();
     submit();

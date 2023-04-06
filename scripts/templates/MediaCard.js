@@ -17,7 +17,7 @@ export default class MediaCard {
     $section.setAttribute("type", "image");
 
     const mediaCard = `
-      <div class="media-container" data-like="${this._media.likes}" data-title="${this._media.title}" data-date="${this._media.date}" aria-label="${this._media.title}" aria-controls="modal">
+      <div class="media-container" data-like="${this._media.likes}" data-title="${this._media.title}" data-date="${this._media.date}" aria-label="${this._media.title}" aria-controls="modal" tabindex="0">
         <img
           alt="${this._media.title}"
           src="${this._media.media}"
@@ -25,7 +25,7 @@ export default class MediaCard {
       </div>
       <footer class="footer-figure">
         <p>${this._media.title}</p>
-        <p>${this._media.likes} <i class="fa-solid fa-heart"></i></p>
+        <p class="like">${this._media.likes} <img src="assets/icons/heart.svg" alt="Coeur" class="coeur"/></p>
       </footer>
     `;
 
@@ -38,7 +38,7 @@ export default class MediaCard {
     $section.setAttribute("type", "video");
 
     const mediaCard = `
-      <div class="media-container" data-like="${this._media.likes}" data-title="${this._media.title}" data-date="${this._media.date}" aria-label="${this._media.title}" aria-controls="modal">
+      <div class="media-container" data-like="${this._media.likes}" data-title="${this._media.title}" data-date="${this._media.date}" aria-label="${this._media.title}" aria-controls="modal" tabindex="0">
         <video title="${this._media.title}">
           <source src="${this._media.media}" type="video/mp4">
           Votre navigateur ne prend pas en charge la vidéo.
@@ -46,7 +46,7 @@ export default class MediaCard {
       </div>
       <footer class="footer-figure">
         <p>${this._media.title}</p>
-        <p>${this._media.likes} <i class="fa-solid fa-heart"></i></p>
+        <p class="like">${this._media.likes} <img src="assets/icons/heart.svg" alt="Coeur" class="coeur"/></p>
       </footer>
     `;
 

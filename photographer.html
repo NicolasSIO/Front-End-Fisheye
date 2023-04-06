@@ -18,18 +18,24 @@
   <body>
     <header role="banner">
       <a href="./index.html">
-        <img src="assets/images/logo.png" class="logo" alt="logo" />
+        <img
+          src="assets/images/logo.png"
+          class="logo tabindex-0"
+          alt="logo"
+          tabindex="0"
+        />
       </a>
     </header>
     <main id="main" class="relative">
       <div class="photograph-header"></div>
       <div class="tri-div">
-        <p class="tri-p">Trier par</p>
+        <label for="tri" class="tri-p">Trier par</label>
         <select
           name="tri"
           id="tri"
-          class="tri-select"
+          class="tri-select tabindex-0"
           aria-label="Tri les médias"
+          tabindex="0"
         >
           <option value="popularite" class="tri-option">Popularité</option>
           <option value="date" class="tri-option">Date</option>
@@ -43,15 +49,23 @@
       </div>
       <div class="lightbox" aria-label="Lightbox du média">
         <button class="lightbox-close">
-          <i class="fa-solid fa-xmark"></i>
+          <img src="assets/icons/closeRed.svg" alt="Fermer lightbox" />
         </button>
         <div class="lightbox-container">
           <button class="lightbox-prev">
-            <i class="fa-solid fa-chevron-left"></i>
+            <img
+              src="assets/icons/arrowLeft.svg"
+              alt="Média précédent"
+              class="fleche"
+            />
           </button>
           <div class="lightbox-media-container"></div>
           <button class="lightbox-next">
-            <i class="fa-solid fa-chevron-right"></i>
+            <img
+              src="assets/icons/arrowRight.svg"
+              alt="Média suivante"
+              class="fleche"
+            />
           </button>
         </div>
       </div>
@@ -63,23 +77,29 @@
             <h2>Contactez-moi</h2>
             <p class="contact_name"></p>
           </div>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img
+            src="assets/icons/closeWhite.svg"
+            onclick="closeModal()"
+            onkeyup="closeModal()"
+            class="close"
+            alt="Fermeture modal"
+          />
         </header>
         <form name="contact" method="get" action="photographer.html">
           <div class="formData">
-            <label>Prénom</label>
+            <label for="first">Prénom</label>
             <input class="text-control" type="text" id="first" name="first" />
           </div>
           <div class="formData">
-            <label>Nom</label>
+            <label for="last">Nom</label>
             <input class="text-control" type="text" id="last" name="last" />
           </div>
           <div class="formData">
-            <label>E-mail</label>
+            <label for="email">E-mail</label>
             <input class="text-control" type="email" id="email" name="email" />
           </div>
           <div class="formData">
-            <label>Votre message</label>
+            <label for="message">Votre message</label>
             <input
               class="text-control input-message"
               type="textarea"
@@ -87,7 +107,9 @@
               name="message"
             />
           </div>
-          <input class="contact_button btn-submit" type="submit" />
+          <button class="contact_button btn-submit" type="submit">
+            Envoyer
+          </button>
         </form>
       </div>
     </div>
