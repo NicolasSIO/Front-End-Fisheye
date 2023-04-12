@@ -18,7 +18,9 @@ function startLightbox() {
       // retourne la variable figures sous forme de tableau
       index = [...figures].indexOf(e.target.parentNode);
       // On test le type de l'élément ciblé
-      if (e.target.parentNode.parentNode.getAttribute("type") === "image") {
+      if (
+        e.target.parentNode.parentNode.getAttribute("data-type") === "image"
+      ) {
         lightbox.style.display = "block";
         lightbox.classList.add("open");
         // e.target.outerHTML retourne l'HTML de l'élément ciblé
@@ -45,7 +47,7 @@ function startLightbox() {
     if (index === figures.length) {
       index = 0;
     }
-    if ([...figures][index].getAttribute("type") === "video") {
+    if ([...figures][index].getAttribute("ata-type") === "video") {
       [...figures][index].childNodes[1].setAttribute("controls", true);
     }
     lightboxMedia.innerHTML = [...figures][index].childNodes[1].outerHTML;
@@ -56,7 +58,7 @@ function startLightbox() {
     if (index < 0) {
       index = figures.length - 1;
     }
-    if ([...figures][index].getAttribute("type") === "video") {
+    if ([...figures][index].getAttribute("ata-type") === "video") {
       [...figures][index].childNodes[1].setAttribute("controls", true);
     }
     lightboxMedia.innerHTML = [...figures][index].childNodes[1].outerHTML;
@@ -67,7 +69,9 @@ function startLightbox() {
     switch (e.keyCode) {
       //e.keyCode === 13 (entrer)
       case 13:
-        if (e.target.parentNode.parentNode.getAttribute("type") === "image") {
+        if (
+          e.target.parentNode.parentNode.getAttribute("data-type") === "image"
+        ) {
           lightbox.style.display = "block";
           // e.target.outerHTML retourne l'HTML de l'élément ciblé
           lightboxMedia.innerHTML = e.target.childNodes[1].outerHTML;
@@ -88,7 +92,9 @@ function startLightbox() {
         if (index < 0) {
           index = figures.length - 1;
         }
-        if ([...figures][index].parentNode.getAttribute("type") === "video") {
+        if (
+          [...figures][index].parentNode.getAttribute("data-type") === "video"
+        ) {
           [...figures][index].childNodes[1].setAttribute("controls", true);
         }
         lightboxMedia.innerHTML = [...figures][index].childNodes[1].outerHTML;
@@ -99,7 +105,9 @@ function startLightbox() {
         if (index === figures.length) {
           index = 0;
         }
-        if ([...figures][index].parentNode.getAttribute("type") === "video") {
+        if (
+          [...figures][index].parentNode.getAttribute("data-type") === "video"
+        ) {
           [...figures][index].childNodes[1].setAttribute("controls", true);
         }
         lightboxMedia.innerHTML = [...figures][index].childNodes[1].outerHTML;

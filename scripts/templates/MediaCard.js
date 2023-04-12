@@ -14,10 +14,10 @@ export default class MediaCard {
 
   createMediaCardImage() {
     const $section = document.createElement("figure");
-    $section.setAttribute("type", "image");
+    $section.setAttribute("data-type", "image");
 
     const mediaCard = `
-      <div class="media-container" data-like="${this._media.likes}" data-title="${this._media.title}" data-date="${this._media.date}" aria-label="${this._media.title}" aria-controls="modal" tabindex="0">
+      <div class="media-container" data-like="${this._media.likes}" data-title="${this._media.title}" data-date="${this._media.date}" aria-label="${this._media.title}" tabindex="0">
         <img
           alt="${this._media.title}"
           src="${this._media.media}"
@@ -35,10 +35,10 @@ export default class MediaCard {
 
   createMediaCardVideo() {
     const $section = document.createElement("figure");
-    $section.setAttribute("type", "video");
+    $section.setAttribute("data-type", "video");
 
     const mediaCard = `
-      <div class="media-container" data-like="${this._media.likes}" data-title="${this._media.title}" data-date="${this._media.date}" aria-label="${this._media.title}" aria-controls="modal" tabindex="0">
+      <div class="media-container" data-like="${this._media.likes}" data-title="${this._media.title}" data-date="${this._media.date}" aria-label="${this._media.title}" tabindex="0">
         <video title="${this._media.title}">
           <source src="${this._media.media}" type="video/mp4">
           Votre navigateur ne prend pas en charge la vidéo.
