@@ -72,12 +72,14 @@ function startLightbox() {
           // e.target.outerHTML retourne l'HTML de l'élément ciblé
           lightboxMedia.innerHTML = e.target.childNodes[1].outerHTML;
           lightboxClose.focus();
+          lightbox.classList.add("open");
         } else {
           lightbox.style.display = "block";
           lightboxMedia.innerHTML = e.target.childNodes[1].outerHTML;
           // Permet d'ajouter le contrôle de la vidéo
           lightboxMedia.childNodes[0].setAttribute("controls", true);
           lightboxClose.focus();
+          lightbox.classList.add("open");
         }
         break;
       //e.keyCode === 37 (arrowLeft)
